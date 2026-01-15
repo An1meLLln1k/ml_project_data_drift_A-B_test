@@ -1,0 +1,89 @@
+[2026-01-15T16:49:44.610+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.retrain_and_register manual__2026-01-15T16:48:24.754659+00:00 [queued]>
+[2026-01-15T16:49:44.618+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.retrain_and_register manual__2026-01-15T16:48:24.754659+00:00 [queued]>
+[2026-01-15T16:49:44.618+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T16:49:44.633+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): retrain_and_register> on 2026-01-15 16:48:24.754659+00:00
+[2026-01-15T16:49:44.643+0000] {standard_task_runner.py:60} INFO - Started process 761 to run task
+[2026-01-15T16:49:44.647+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'retrain_and_register', 'manual__2026-01-15T16:48:24.754659+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpfr310slb']
+[2026-01-15T16:49:44.650+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask retrain_and_register
+[2026-01-15T16:49:44.715+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.retrain_and_register manual__2026-01-15T16:48:24.754659+00:00 [running]> on host 9d2f2e43e259
+[2026-01-15T16:49:44.820+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='retrain_and_register' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T16:48:24.754659+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T16:48:24.754659+00:00'
+[2026-01-15T16:49:45.884+0000] {logging_mixin.py:188} WARNING - 2026/01/15 16:49:45 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2026-01-15T16:49:47.809+0000] {logging_mixin.py:188} WARNING - Processing:   0%|          | 0/61 [00:00<?, ?it/s]
+[2026-01-15T16:49:52.212+0000] {logging_mixin.py:188} WARNING - Processing:   8%|8         | 5/61 [00:04<00:49,  1.14it/s]
+[2026-01-15T16:49:52.496+0000] {logging_mixin.py:188} WARNING - Processing:  11%|#1        | 7/61 [00:04<00:33,  1.63it/s]
+[2026-01-15T16:50:30.351+0000] {logging_mixin.py:188} WARNING - Processing:  15%|#4        | 9/61 [00:42<05:57,  6.87s/it]
+[2026-01-15T16:50:30.552+0000] {logging_mixin.py:188} WARNING - Processing:  18%|#8        | 11/61 [00:42<03:52,  4.65s/it]
+[2026-01-15T16:50:30.788+0000] {logging_mixin.py:188} WARNING - Processing:  25%|##4       | 15/61 [00:42<01:51,  2.43s/it]
+[2026-01-15T16:50:30.956+0000] {logging_mixin.py:188} WARNING - Processing:  31%|###1      | 19/61 [00:43<01:01,  1.45s/it]
+[2026-01-15T16:50:31.127+0000] {logging_mixin.py:188} WARNING - Processing:  34%|###4      | 21/61 [00:43<00:45,  1.14s/it]
+[2026-01-15T16:50:31.261+0000] {logging_mixin.py:188} WARNING - Processing:  38%|###7      | 23/61 [00:43<00:33,  1.13it/s]
+[2026-01-15T16:50:31.412+0000] {logging_mixin.py:188} WARNING - Processing:  41%|####      | 25/61 [00:43<00:24,  1.49it/s]
+[2026-01-15T16:50:31.564+0000] {logging_mixin.py:188} WARNING - Processing:  44%|####4     | 27/61 [00:43<00:17,  1.95it/s]
+[2026-01-15T16:50:32.107+0000] {logging_mixin.py:188} WARNING - Processing:  48%|####7     | 29/61 [00:44<00:14,  2.25it/s]
+[2026-01-15T16:50:32.254+0000] {logging_mixin.py:188} WARNING - Processing:  51%|#####     | 31/61 [00:44<00:10,  2.95it/s]
+[2026-01-15T16:50:32.579+0000] {logging_mixin.py:188} WARNING - Processing:  57%|#####7    | 35/61 [00:44<00:05,  4.47it/s]
+[2026-01-15T16:50:32.723+0000] {logging_mixin.py:188} WARNING - Processing:  61%|######    | 37/61 [00:44<00:04,  5.35it/s]
+[2026-01-15T16:50:32.866+0000] {logging_mixin.py:188} WARNING - Processing:  64%|######3   | 39/61 [00:45<00:03,  6.36it/s]
+[2026-01-15T16:50:33.169+0000] {logging_mixin.py:188} WARNING - Processing:  67%|######7   | 41/61 [00:45<00:03,  6.42it/s]
+[2026-01-15T16:50:33.319+0000] {logging_mixin.py:188} WARNING - Processing:  70%|#######   | 43/61 [00:45<00:02,  7.50it/s]
+[2026-01-15T16:50:33.552+0000] {logging_mixin.py:188} WARNING - Processing:  77%|#######7  | 47/61 [00:45<00:01,  9.99it/s]
+[2026-01-15T16:50:34.219+0000] {logging_mixin.py:188} WARNING - Processing:  80%|########  | 49/61 [00:46<00:01,  6.41it/s]
+[2026-01-15T16:50:34.370+0000] {logging_mixin.py:188} WARNING - Processing:  84%|########3 | 51/61 [00:46<00:01,  7.38it/s]
+[2026-01-15T16:50:36.018+0000] {logging_mixin.py:188} WARNING - Processing:  87%|########6 | 53/61 [00:48<00:02,  3.13it/s]
+[2026-01-15T16:50:36.164+0000] {logging_mixin.py:188} WARNING - Processing:  90%|######### | 55/61 [00:48<00:01,  3.98it/s]
+[2026-01-15T16:50:36.353+0000] {logging_mixin.py:188} WARNING - Processing:  97%|#########6| 59/61 [00:48<00:00,  6.20it/s]
+[2026-01-15T16:50:36.512+0000] {logging_mixin.py:188} WARNING - Processing: 100%|##########| 61/61 [00:48<00:00,  7.05it/s]
+[2026-01-15T16:50:36.516+0000] {logging_mixin.py:188} WARNING -                                                            
+[2026-01-15T16:51:40.689+0000] {logging_mixin.py:188} INFO -                                     Model  Accuracy     AUC  Recall   Prec.  \
+lda          Linear Discriminant Analysis    1.0000  0.0000  1.0000  1.0000   
+lr                    Logistic Regression    0.9444  0.0000  0.9444  0.9556   
+nb                            Naive Bayes    0.9444  1.0000  0.9444  0.9556   
+qda       Quadratic Discriminant Analysis    0.9444  0.0000  0.9444  0.9556   
+knn                K Neighbors Classifier    0.9188  0.9931  0.9188  0.9350   
+ada                  Ada Boost Classifier    0.9188  0.0000  0.9188  0.9350   
+gbc          Gradient Boosting Classifier    0.9188  0.0000  0.9188  0.9350   
+et                 Extra Trees Classifier    0.9188  1.0000  0.9188  0.9350   
+dt               Decision Tree Classifier    0.8932  0.9213  0.8932  0.9214   
+rf               Random Forest Classifier    0.8932  0.9965  0.8932  0.9214   
+svm                   SVM - Linear Kernel    0.7585  0.0000  0.7585  0.6330   
+ridge                    Ridge Classifier    0.6752  0.0000  0.6752  0.6160   
+lightgbm  Light Gradient Boosting Machine    0.3248  0.5000  0.3248  0.1056   
+dummy                    Dummy Classifier    0.3248  0.5000  0.3248  0.1056   
+
+              F1   Kappa     MCC  TT (Sec)  
+lda       1.0000  1.0000  1.0000    0.0233  
+lr        0.9436  0.9167  0.9228    1.4633  
+nb        0.9436  0.9167  0.9228    0.0300  
+qda       0.9436  0.9167  0.9228    0.0200  
+knn       0.9179  0.8783  0.8871   12.6167  
+ada       0.9179  0.8783  0.8871    0.0467  
+gbc       0.9179  0.8783  0.8871    0.1000  
+et        0.9179  0.8783  0.8871    0.2200  
+dt        0.8910  0.8406  0.8562    0.0133  
+rf        0.8910  0.8406  0.8562    0.1800  
+svm       0.6770  0.6312  0.6951    0.0567  
+ridge     0.6222  0.5091  0.5609    0.0500  
+lightgbm  0.1594  0.0000  0.0000    0.5467  
+dummy     0.1594  0.0000  0.0000    0.0167  
+[2026-01-15T16:52:29.774+0000] {logging_mixin.py:188} WARNING - Registered model 'iris_classifier' already exists. Creating a new version of this model...
+[2026-01-15T16:52:30.132+0000] {logging_mixin.py:188} WARNING - 2026/01/15 16:52:30 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: iris_classifier, version 5
+[2026-01-15T16:52:30.133+0000] {logging_mixin.py:188} WARNING - Created version '5' of model 'iris_classifier'.
+[2026-01-15T16:52:30.505+0000] {python.py:202} INFO - Done. Returned value was: {'train': {'export_run_id': '7e6bd86b8742422f9330baa631241128', 'train_acc_quick': 0.9811320754716981}, 'registry': {'model_name': 'iris_classifier', 'version': 5, 'stage': 'Staging'}, 'drift': {'drift_detected': True, 'drift_score': 0.6657836894355122, 'report': {'psi_per_feature': {'sepal_length': 0.15730568194638933, 'sepal_width': 0.18138592907280046, 'petal_length': 0.2682708661011944, 'petal_width': 0.6657836894355122}, 'psi_max': 0.6657836894355122, 'psi_mean': 0.3181865416389741}, 'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.05}}
+[2026-01-15T16:52:30.554+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=retrain_and_register, execution_date=20260115T164824, start_date=20260115T164944, end_date=20260115T165230
+[2026-01-15T16:52:30.692+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T16:52:30.756+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

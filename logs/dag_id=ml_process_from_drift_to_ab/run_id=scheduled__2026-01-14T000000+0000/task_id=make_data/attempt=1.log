@@ -1,0 +1,130 @@
+[2026-01-15T15:20:27.747+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:20:27.754+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:20:27.755+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:20:27.770+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:20:27.782+0000] {standard_task_runner.py:60} INFO - Started process 103 to run task
+[2026-01-15T15:20:27.787+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmplqdjfjsy']
+[2026-01-15T15:20:27.790+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:20:27.890+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 34b64b3cfbbf
+[2026-01-15T15:20:27.958+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:20:27.991+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:20:28.009+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T152027, end_date=20260115T152028
+[2026-01-15T15:20:28.040+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:20:28.061+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:30:11.882+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:30:11.890+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:30:11.891+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:30:11.914+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:30:11.925+0000] {standard_task_runner.py:60} INFO - Started process 162 to run task
+[2026-01-15T15:30:11.935+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpcu_uakl6']
+[2026-01-15T15:30:11.943+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:30:12.278+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 281ad3ab97b0
+[2026-01-15T15:30:12.584+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:30:12.687+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:30:12.723+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T153011, end_date=20260115T153012
+[2026-01-15T15:30:12.790+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:30:12.884+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:38:59.864+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:38:59.871+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:38:59.872+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:38:59.887+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:38:59.898+0000] {standard_task_runner.py:60} INFO - Started process 162 to run task
+[2026-01-15T15:38:59.903+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpgouh26gr']
+[2026-01-15T15:38:59.906+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:38:59.973+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 6972b1b1dd6e
+[2026-01-15T15:39:00.049+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:39:00.079+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:39:00.095+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T153859, end_date=20260115T153900
+[2026-01-15T15:39:00.155+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:39:00.182+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:42:21.630+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:42:21.641+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:42:21.641+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:42:21.676+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:42:21.702+0000] {standard_task_runner.py:60} INFO - Started process 99 to run task
+[2026-01-15T15:42:21.708+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp7s9_qbz4']
+[2026-01-15T15:42:21.712+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:42:21.787+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host d38751901194
+[2026-01-15T15:42:21.854+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:42:21.885+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:42:21.901+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T154221, end_date=20260115T154221
+[2026-01-15T15:42:21.964+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:42:21.987+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:46:13.665+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:46:13.671+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:46:13.672+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:46:13.685+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:46:13.694+0000] {standard_task_runner.py:60} INFO - Started process 81 to run task
+[2026-01-15T15:46:13.701+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp8t9kfobs']
+[2026-01-15T15:46:13.704+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:46:13.778+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host a01f58bd74ca
+[2026-01-15T15:46:13.838+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:46:13.866+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:46:13.881+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T154613, end_date=20260115T154613
+[2026-01-15T15:46:13.912+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:46:13.933+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:48:53.126+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:48:53.131+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:48:53.132+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:48:53.146+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:48:53.155+0000] {standard_task_runner.py:60} INFO - Started process 163 to run task
+[2026-01-15T15:48:53.159+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp8te6coj3']
+[2026-01-15T15:48:53.161+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:48:53.218+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 2f13b3fdb60d
+[2026-01-15T15:48:53.276+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:48:53.301+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:48:53.314+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T154853, end_date=20260115T154853
+[2026-01-15T15:48:53.372+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:48:53.393+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T15:53:10.609+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:53:10.615+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T15:53:10.616+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T15:53:10.645+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T15:53:10.660+0000] {standard_task_runner.py:60} INFO - Started process 82 to run task
+[2026-01-15T15:53:10.666+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpwo6mni6b']
+[2026-01-15T15:53:10.670+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T15:53:10.857+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 3a833b60b219
+[2026-01-15T15:53:10.945+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T15:53:10.993+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T15:53:11.063+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T155310, end_date=20260115T155311
+[2026-01-15T15:53:11.123+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T15:53:11.170+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T16:07:49.458+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T16:07:49.560+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T16:07:49.590+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T16:07:49.665+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T16:07:49.696+0000] {standard_task_runner.py:60} INFO - Started process 527 to run task
+[2026-01-15T16:07:49.703+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpnmm9bmh1']
+[2026-01-15T16:07:49.707+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T16:07:49.853+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 0a5dcabd7b10
+[2026-01-15T16:07:49.962+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T16:07:50.033+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T16:07:50.130+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T160749, end_date=20260115T160750
+[2026-01-15T16:07:50.185+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T16:07:50.239+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T16:47:01.911+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T16:47:01.917+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T16:47:01.918+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T16:47:01.931+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T16:47:01.943+0000] {standard_task_runner.py:60} INFO - Started process 91 to run task
+[2026-01-15T16:47:01.951+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp3wvcfrlz']
+[2026-01-15T16:47:01.955+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T16:47:02.134+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 9d2f2e43e259
+[2026-01-15T16:47:02.219+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T16:47:02.259+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.05}
+[2026-01-15T16:47:02.277+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T164701, end_date=20260115T164702
+[2026-01-15T16:47:02.324+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T16:47:02.348+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-15T19:39:25.355+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T19:39:25.383+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [queued]>
+[2026-01-15T19:39:25.384+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T19:39:25.409+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): make_data> on 2026-01-14 00:00:00+00:00
+[2026-01-15T19:39:25.419+0000] {standard_task_runner.py:60} INFO - Started process 81 to run task
+[2026-01-15T19:39:25.428+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'make_data', 'scheduled__2026-01-14T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp_o4ok4ey']
+[2026-01-15T19:39:25.433+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask make_data
+[2026-01-15T19:39:25.614+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.make_data scheduled__2026-01-14T00:00:00+00:00 [running]> on host 6c97fd2df566
+[2026-01-15T19:39:25.686+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='make_data' AIRFLOW_CTX_EXECUTION_DATE='2026-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-14T00:00:00+00:00'
+[2026-01-15T19:39:25.722+0000] {python.py:202} INFO - Done. Returned value was: {'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 5.0}
+[2026-01-15T19:39:25.750+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=make_data, execution_date=20260114T000000, start_date=20260115T193925, end_date=20260115T193925
+[2026-01-15T19:39:25.799+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T19:39:25.821+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

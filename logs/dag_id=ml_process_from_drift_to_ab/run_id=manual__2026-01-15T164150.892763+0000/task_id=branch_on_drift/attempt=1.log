@@ -1,0 +1,16 @@
+[2026-01-15T16:42:08.938+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.branch_on_drift manual__2026-01-15T16:41:50.892763+00:00 [queued]>
+[2026-01-15T16:42:08.944+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.branch_on_drift manual__2026-01-15T16:41:50.892763+00:00 [queued]>
+[2026-01-15T16:42:08.944+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T16:42:08.957+0000] {taskinstance.py:2217} INFO - Executing <Task(_BranchPythonDecoratedOperator): branch_on_drift> on 2026-01-15 16:41:50.892763+00:00
+[2026-01-15T16:42:09.026+0000] {standard_task_runner.py:60} INFO - Started process 1795 to run task
+[2026-01-15T16:42:09.035+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'branch_on_drift', 'manual__2026-01-15T16:41:50.892763+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmphl_4090b']
+[2026-01-15T16:42:09.041+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask branch_on_drift
+[2026-01-15T16:42:09.130+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.branch_on_drift manual__2026-01-15T16:41:50.892763+00:00 [running]> on host 0a5dcabd7b10
+[2026-01-15T16:42:09.215+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='branch_on_drift' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T16:41:50.892763+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T16:41:50.892763+00:00'
+[2026-01-15T16:42:09.217+0000] {python.py:202} INFO - Done. Returned value was: retrain_and_register
+[2026-01-15T16:42:09.218+0000] {branch.py:35} INFO - Branch into retrain_and_register
+[2026-01-15T16:42:09.218+0000] {skipmixin.py:178} INFO - Following branch retrain_and_register
+[2026-01-15T16:42:09.223+0000] {skipmixin.py:244} INFO - Skipping tasks [('no_retrain', -1)]
+[2026-01-15T16:42:09.289+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=branch_on_drift, execution_date=20260115T164150, start_date=20260115T164208, end_date=20260115T164209
+[2026-01-15T16:42:09.331+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T16:42:09.354+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,2 @@
+ts,user_id,variant,stage,model_version,features_json,y_true,y_pred
+2026-01-15T18:11:56.226434,42,A,Production,1,"{""sepal_length"": 5.1, ""sepal_width"": 3.5, ""petal_length"": 1.4, ""petal_width"": 0.2}",,0

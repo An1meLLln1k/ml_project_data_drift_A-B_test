@@ -1,0 +1,86 @@
+services:
+  mlflow:
+    build:
+      context: .
+      dockerfile: docker/mlflow.Dockerfile
+    container_name: mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      # База (SQLite) хранится в папке
+      - ./mlflow_db:/mlflow_db
+      # Артефакты храним в папке (на хосте)
+      - ./mlruns:/mlruns
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:////mlflow_db/mlflow.db
+      --host 0.0.0.0
+      --port 5000
+      --serve-artifacts
+      --artifacts-destination /mlruns
+
+
+
+
+
+  airflow:
+    build:
+      context: .
+      dockerfile: docker/airflow/Dockerfile
+    container_name: airflow
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+
+      # Чтобы работало `from src...` и `import src...`
+      - PYTHONPATH=/opt/airflow
+
+      # MLflow
+      - MLFLOW_TRACKING_URI=${MLFLOW_TRACKING_URI}
+      - MLFLOW_MODEL_NAME=${MLFLOW_MODEL_NAME}
+      - MLFLOW_EXPERIMENT_NAME=${MLFLOW_EXPERIMENT_NAME}
+
+      # Куда складывать артефакты (важно: writable в airflow)
+      - MLFLOW_ARTIFACT_ROOT=/opt/airflow/mlruns
+
+      # Drift
+      - DRIFT_THRESHOLD=${DRIFT_THRESHOLD}
+      - DRIFT_BINS=${DRIFT_BINS}
+      - DRIFT_SHIFT=${DRIFT_SHIFT}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./reports:/opt/airflow/reports
+
+      # ВОТ ОНО: артефакты будут писаться сюда, и airflow туда имеет доступ
+      - ./mlruns_airflow:/opt/airflow/mlruns
+    depends_on:
+      - mlflow
+    command: ["bash", "-lc", "airflow standalone"]
+
+  ab-router:
+    build:
+      context: .
+      dockerfile: docker/flask/Dockerfile
+    container_name: ab-router
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_TRACKING_URI=${MLFLOW_TRACKING_URI}
+      - MLFLOW_MODEL_NAME=${MLFLOW_MODEL_NAME}
+      - TRAFFIC_B_PERCENT=${TRAFFIC_B_PERCENT}
+      - LOG_PATH=${LOG_PATH}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+      - ./logs:/app/logs
+    depends_on:
+      - mlflow

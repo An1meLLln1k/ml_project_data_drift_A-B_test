@@ -1,0 +1,8 @@
+channels:
+- conda-forge
+dependencies:
+- pip<=25.3
+- pip:
+  - mlflow==2.14.3
+  - pycaret==3.3.2
+name: pycaret_automl-env

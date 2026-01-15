@@ -1,0 +1,13 @@
+[2026-01-15T16:42:02.811+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.calc_drift manual__2026-01-15T16:41:50.892763+00:00 [queued]>
+[2026-01-15T16:42:02.818+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_process_from_drift_to_ab.calc_drift manual__2026-01-15T16:41:50.892763+00:00 [queued]>
+[2026-01-15T16:42:02.818+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-01-15T16:42:02.831+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): calc_drift> on 2026-01-15 16:41:50.892763+00:00
+[2026-01-15T16:42:02.842+0000] {standard_task_runner.py:60} INFO - Started process 1778 to run task
+[2026-01-15T16:42:02.849+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'ml_process_from_drift_to_ab', 'calc_drift', 'manual__2026-01-15T16:41:50.892763+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmptbgmsdnj']
+[2026-01-15T16:42:02.854+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask calc_drift
+[2026-01-15T16:42:02.919+0000] {task_command.py:423} INFO - Running <TaskInstance: ml_process_from_drift_to_ab.calc_drift manual__2026-01-15T16:41:50.892763+00:00 [running]> on host 0a5dcabd7b10
+[2026-01-15T16:42:02.988+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_process_from_drift_to_ab' AIRFLOW_CTX_TASK_ID='calc_drift' AIRFLOW_CTX_EXECUTION_DATE='2026-01-15T16:41:50.892763+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-15T16:41:50.892763+00:00'
+[2026-01-15T16:42:03.013+0000] {python.py:202} INFO - Done. Returned value was: {'drift_detected': True, 'drift_score': 4.20098717722581, 'report': {'psi_per_feature': {'sepal_length': 0.15730568194638933, 'sepal_width': 0.18138592907280046, 'petal_length': 4.038388988030636, 'petal_width': 4.20098717722581}, 'psi_max': 4.20098717722581, 'psi_mean': 2.1445169440689087}, 'baseline': '/opt/airflow/data/baseline.csv', 'current': '/opt/airflow/data/current.csv', 'shift': 0.8}
+[2026-01-15T16:42:03.027+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=ml_process_from_drift_to_ab, task_id=calc_drift, execution_date=20260115T164150, start_date=20260115T164202, end_date=20260115T164203
+[2026-01-15T16:42:03.061+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-15T16:42:03.081+0000] {taskinstance.py:3312} INFO - 1 downstream tasks scheduled from follow-on schedule check
